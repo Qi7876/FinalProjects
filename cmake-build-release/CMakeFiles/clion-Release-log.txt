@@ -1,8 +1,0 @@
-/Users/Qiiwww/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -G Xcode -S /Users/Qiiwww/CLionProjects/FinalProjects -B /Users/Qiiwww/CLionProjects/FinalProjects/cmake-build-release
--- The C compiler identification is unknown
-CMake Error at CMakeLists.txt:2 (project):
-  No CMAKE_C_COMPILER could be found.
-
-
-
--- Configuring incomplete, errors occurred!

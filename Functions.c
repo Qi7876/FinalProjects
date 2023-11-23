@@ -24,8 +24,7 @@ int StrToInt(const char *string) {
 }
 
 int ReadStudentInfo(const char *filename, struct student **pStudents) {
-    FILE *StudentsList;
-    StudentsList = fopen(filename, "r");
+    FILE *StudentsList = fopen(filename, "r");
     char Charact, Row[51];
     int StudentNum = 0;
 
