@@ -1,0 +1,4 @@
+/Users/Qiiwww/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/opt/homebrew/Cellar/gcc/13.2.0/bin/gcc-13 -DCMAKE_CXX_COMPILER=/opt/homebrew/Cellar/gcc/13.2.0/bin/g++-13 -S /Users/Qiiwww/CLionProjects/FinalProjects -B /Users/Qiiwww/CLionProjects/FinalProjects/cmake-build-debug-gcc
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/Qiiwww/CLionProjects/FinalProjects/cmake-build-debug-gcc
