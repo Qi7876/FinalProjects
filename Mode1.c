@@ -1,6 +1,6 @@
 /*
  * Created by Qiiwww on 11/21/23.
- * 单教学班成绩统计
+ * Statistic of single class
  */
 
 #include "ProjectIndex.h"
@@ -10,60 +10,61 @@ int Mode1(void) {
     struct dirent *entry;
     char fileNumber[256][256], currentDir[256];
     char *lastSlash;
-    int fileCount = 0, userInput, StudentsNum;
+    int fileCount = 0, userInput, StudentsNum, AverageScores;
     struct student *pStudents;
 
     strcpy(currentDir, __FILE__);
     lastSlash = strrchr(currentDir, '/');
     if (lastSlash != NULL) {
-        *lastSlash = '\0';  // 截断字符串，只保留目录部分
+        *lastSlash = '\0';  // Cut off the string, only leave the part of directory.
     }
 
-    // 打开当前目录
+    // Open the current directory.
     dir = opendir(currentDir);
 
     if (dir == NULL) {
-        fprintf(stderr, "当前目录打开失败。\n");
+        fprintf(stderr, "Fail to open the curent directort.\n");
         return -1;
     }
 
-    // 遍历目录
+    // Directory travelsal
     while ((entry = readdir(dir)) != NULL) {
-        // 检查文件名是否以 ".txt" 结尾
-        if (strstr(entry->d_name, ".txt") != NULL) {
+        // check whether the file is a txt or not.
+        if (strstr(entry->d_name, ".txt") != NULL && strstr(entry->d_name, "CMake") == NULL) {
             printf("%d: %s\n", fileCount + 1, entry->d_name);
             strcpy(fileNumber[fileCount], entry->d_name);
             fileCount++;
         }
     }
 
-    // 关闭目录
     closedir(dir);
 
-    // 用户输入数字
-
-    printf("请输入你想处理的文件编号: ");
+    printf("Please input the number of the file you want to process: ");
     scanf("%d", &userInput);
 
-    // 处理用户输入
+    // Process the input of user.
     if (userInput >= 1 && userInput <= fileCount) {
-        printf("选择的文件: %s\n", fileNumber[userInput - 1]);
-        // 在这里可以添加处理文件的代码
+        printf("You choose the file: %s\n", fileNumber[userInput - 1]);
     } else {
-        fprintf(stderr, "非法的文件选择。\n");
+        fprintf(stderr, "Invalid file.\n");
         return -1;
     }
 
-    printf("开始处理文件。\n");
+    printf("Start processing.\n");
     StudentsNum = ReadStudentInfo(fileNumber[userInput - 1], &pStudents);
 
-    printf("-------------------------------------------------------------\n"
-           "|                        教学班编号：%d                       |\n"
+    AverageScores = Count(pStudents, StudentsNum);
+
+    fprintf(stdout, "-------------------------------------------------------------\n"
+           "|                          Class：%-26d|\n"
            "-------------------------------------------------------------\n"
-           "序号 |  姓名  |        学号        | 实验成绩 | 半期成绩 | C总成绩\n", Class(fileNumber[userInput - 1]));
+           " Num |  Name  |          ID          | Trial |  Mid  | Total \n", Class(fileNumber[userInput - 1]));
 
     for (int i = 0; i < StudentsNum; ++i) {
-        printf("");
+        fprintf(stdout, " %-3d |  %-5s |     %s    |  %-3d  |  %-3d  |  %-3d  \n", i + 1, pStudents[i].Name, pStudents[i].ID, pStudents[i].TrialScores, pStudents[i].MidScores, pStudents[i].TotalScores);
     }
+    fprintf(stdout, "-------------------------------------------------------------\n"
+                    " Average scores: %d", AverageScores);
+    free(pStudents);
     return 1;
 }

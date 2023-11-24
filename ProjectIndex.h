@@ -10,7 +10,14 @@
 #include "string.h"
 #include <dirent.h>
 
-struct student{};
+struct student {
+ char Name[10];
+ char ID[15];
+ int TrialScores;
+ int MidScores;
+ int TotalScores;
+};
+
 int StrToInt(const char *string);
 int ReadStudentInfo(const char *filename, struct student **pStudents);
 float Count(struct student pStu[], int num);

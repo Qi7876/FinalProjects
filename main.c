@@ -2,14 +2,14 @@
 
 int main() {
     int UserChoose;
-    printf("---------------------------------\n"
-           "|         学生成绩整理系统         |\n"
-           "---------------------------------\n"
-           "请选择模式：\n"
-           "（1）单教学班成绩统计\n"
-           "（2）学院成绩统计\n"
-           "（3）教学班成绩段人数分布折线图\n"
-           "（4）退出\n");
+    printf("-----------------------------------------------------\n"
+           "|         Students' Scores Statistic System         |\n"
+           "-----------------------------------------------------\n"
+           "Please choose the work mode:\n"
+           "(1) Statistic of single class\n"
+           "(2) Statistic of the whole academy.\n"
+           "(3) Broken line graph of single class on scores.\n"
+           "(4) Exit\n");
 
     INPUT:
     scanf("%d", &UserChoose);
@@ -25,10 +25,10 @@ int main() {
             Mode3();
             break;
         case 4:
-            printf("程序已退出。\n");
+            printf("Exiting...\n");
             return 0;
         default:
-            printf("非法的选项，请重新选择。\n");
+            printf("Invalid choice, please choose again.\n");
             goto INPUT;
     }
     return 0;

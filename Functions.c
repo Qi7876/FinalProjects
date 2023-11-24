@@ -1,19 +1,9 @@
 /*
  * Created by Qiiwww on 11/21/23.
- * 储存自定义函数
+ * The functions.
  */
 
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
-
-struct student {
-    char Name[10];
-    char ID[15];
-    int TrialScores;
-    int MidScores;
-    int TotalScores;
-};
+#include "ProjectIndex.h"
 
 int StrToInt(const char *string) {
     int ResultInt = 0;
@@ -29,35 +19,35 @@ int ReadStudentInfo(const char *filename, struct student **pStudents) {
     int StudentNum = 0;
 
     if (StudentsList == NULL) {
-        fprintf(stderr, "文件打开错误,请检查格式是否正确。\n");
+        fprintf(stderr, "Fail to open the file.\n");
         return -1;
     }
 
-    //获得行数，即学生个数
+    // Get the num of students.
     while ((Charact = fgetc(StudentsList)) != EOF) {
         if (Charact == '\n') {
             StudentNum++;
         }
     }
 
-    //分配内存
+    // Alloc the memory.
     *pStudents = (struct student *) malloc(StudentNum * sizeof(struct student));
 
     if (*pStudents == NULL) {
-        fprintf(stderr, "内存分配失败。\n");
+        fprintf(stderr, "Fail to allot the memory.\n");
         return -1;
     }
 
     fseek(StudentsList, 0, SEEK_SET);
 
-    //写入学生信息
+    // Write the information into memory.
     for (int i = 0; i < StudentNum; ++i) {
         fgets(Row, sizeof(Row), StudentsList);
         strcpy((*pStudents)[i].Name, strtok(Row, " "));
         strcpy((*pStudents)[i].ID, strtok(NULL, " "));
         (*pStudents)[i].TrialScores = StrToInt(strtok(NULL, " "));
         (*pStudents)[i].MidScores = StrToInt(strtok(NULL, " "));
-        (*pStudents)[i].TrialScores = 0;
+        (*pStudents)[i].TotalScores = 0;
     }
 
     fclose(StudentsList);

@@ -1,6 +1,6 @@
 /*
  * Created by Qiiwww on 11/21/23.
- * 教学班成绩段人数分布折线图
+ * Broken line graph of single class on scores.
  */
 
 #include "ProjectIndex.h"
@@ -16,45 +16,41 @@ int Mode3(void) {
     strcpy(currentDir, __FILE__);
     lastSlash = strrchr(currentDir, '/');
     if (lastSlash != NULL) {
-        *lastSlash = '\0';  // 截断字符串，只保留目录部分
+        *lastSlash = '\0';  // Cut off the string, only leave the part of directory.
     }
 
-    // 打开当前目录
+    // Open the current directory.
     dir = opendir(currentDir);
 
     if (dir == NULL) {
-        fprintf(stderr, "当前目录打开失败。\n");
+        fprintf(stderr, "Fail to open the curent directort.\n");
         return -1;
     }
 
-    // 遍历目录
+    // Directory travelsal
     while ((entry = readdir(dir)) != NULL) {
-        // 检查文件名是否以 ".txt" 结尾
-        if (strstr(entry->d_name, ".txt") != NULL) {
+        // check whether the file is a txt or not.
+        if (strstr(entry->d_name, ".txt") != NULL && strstr(entry->d_name, "CMake") == NULL) {
             printf("%d: %s\n", fileCount + 1, entry->d_name);
             strcpy(fileNumber[fileCount], entry->d_name);
             fileCount++;
         }
     }
 
-    // 关闭目录
     closedir(dir);
 
-    // 用户输入数字
-
-    printf("请输入你想处理的文件编号: ");
+    printf("Please input the number of the file you want to process: ");
     scanf("%d", &userInput);
 
-    // 处理用户输入
+    // Process the input of user.
     if (userInput >= 1 && userInput <= fileCount) {
-        printf("选择的文件: %s\n", fileNumber[userInput - 1]);
-        // 在这里可以添加处理文件的代码
+        printf("You choose the file: %s\n", fileNumber[userInput - 1]);
     } else {
-        fprintf(stderr, "非法的文件选择。\n");
+        fprintf(stderr, "Invalid file.\n");
         return -1;
     }
 
-    printf("开始处理文件。\n");
+    printf("Start processing.\n");
 
     return 1;
 }
