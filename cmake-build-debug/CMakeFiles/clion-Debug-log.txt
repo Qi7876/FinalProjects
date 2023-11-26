@@ -1,10 +1,10 @@
-"/Users/Qiiwww/Applications/CLion Nova.app/Contents/bin/cmake/mac/aarch64/bin/cmake" "-DCMAKE_MAKE_PROGRAM=/Users/Qiiwww/Applications/CLion Nova.app/Contents/bin/ninja/mac/aarch64/ninja" -G "Ninja Multi-Config" -S /Users/Qiiwww/CLionProjects/FinalProjects -B /Users/Qiiwww/CLionProjects/FinalProjects/cmake-build-debug
+/Users/qiiwww/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/qiiwww/CLionProjects/FinalProjects -B /Users/qiiwww/CLionProjects/FinalProjects/cmake-build-debug
 -- The C compiler identification is AppleClang 15.0.0.15000040
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc - skipped
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Configuring done (0.9s)
+-- Configuring done (0.8s)
 -- Generating done (0.0s)
--- Build files have been written to: /Users/Qiiwww/CLionProjects/FinalProjects/cmake-build-debug
+-- Build files have been written to: /Users/qiiwww/CLionProjects/FinalProjects/cmake-build-debug

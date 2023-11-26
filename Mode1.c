@@ -64,7 +64,7 @@ int Mode1(void) {
         fprintf(stdout, " %-3d |  %-5s |     %s    |  %-3d  |  %-3d  |  %-3d  \n", i + 1, pStudents[i].Name, pStudents[i].ID, pStudents[i].TrialScores, pStudents[i].MidScores, pStudents[i].TotalScores);
     }
     fprintf(stdout, "-------------------------------------------------------------\n"
-                    " Average scores: %d", AverageScores);
+                    " Average scores: %d\n", AverageScores);
     free(pStudents);
     return 1;
 }

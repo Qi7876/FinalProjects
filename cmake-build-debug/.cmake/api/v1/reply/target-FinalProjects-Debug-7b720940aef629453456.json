@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "RelWithDebInfo/FinalProjects"
+			"path" : "FinalProjects"
 		}
 	],
 	"backtrace" : 1,
@@ -35,7 +35,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-O2 -g -DNDEBUG -std=gnu11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -fcolor-diagnostics"
+					"fragment" : "-g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics"
 				}
 			],
 			"language" : "C",
@@ -63,7 +63,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-O2 -g -DNDEBUG",
+				"fragment" : "-g",
 				"role" : "flags"
 			},
 			{
