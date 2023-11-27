@@ -186,8 +186,9 @@ void RenderLineChart(const int *data, int dataSize) {
     for (int i = 0; i < dataSize; i++) {
         int x = i * 8;
         int y = HEIGHT - data[i + 1];
-
-        chart[y][x] = '#';
+        for (int j = 5; j >= y; --j) {
+            chart[j][x] = '#';
+        }
     }
 
     /*for (int i = 0; i < dataSize - 1; ++i) {
@@ -205,14 +206,15 @@ void RenderLineChart(const int *data, int dataSize) {
         }
     }*/
 
+    fprintf(stdout, "Nums.\n");
     for (int i = 0; i < HEIGHT; i++) {
-        fprintf(stdout, "%02d  ", HEIGHT - i);
+        fprintf(stdout, "%02d|   ", HEIGHT - i);
         for (int j = 0; j < WIDTH; j++) {
             putchar(chart[i][j]);
         }
         fprintf(stdout, "\n");
     }
 
-    fprintf(stdout, "00  ***************************\n"
-                    "   <60   60-75    75-85    >85\n");
+    fprintf(stdout, "00----------------------------------\n"
+                    "     <60   60-75    75-85    >85  The scores.\n");
 }
