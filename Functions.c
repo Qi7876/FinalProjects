@@ -73,6 +73,7 @@ int Class(char *ID) {
     int Class;
     char Temp[3];
     strncpy(Temp, ID + 8,2);
+    Temp[2] = '\0';
     Class = StrToInt(Temp);
     return Class;
 }
@@ -167,4 +168,51 @@ void AcademyList(void) {
         }
     }
     free(pStudents);
+}
+#define WIDTH 26
+#define HEIGHT 6
+
+void RenderLineChart(const int *data, int dataSize) {
+    int LineCnt = 0;
+    float K;
+    char chart[HEIGHT][WIDTH];
+
+    for (int i = 0; i < HEIGHT; i++) {
+        for (int j = 0; j < WIDTH; j++) {
+            chart[i][j] = ' ';
+        }
+    }
+
+    for (int i = 0; i < dataSize; i++) {
+        int x = i * 8;
+        int y = HEIGHT - data[i + 1];
+
+        chart[y][x] = '#';
+    }
+
+    /*for (int i = 0; i < dataSize - 1; ++i) {
+        K = -((float) data[i] - (float) data[i + 1]) / 8;
+        for (;LineCnt < 8 * (i + 1); LineCnt++) {
+            if (LineCnt % 8 == 0) {
+                continue;
+            } else {
+                if (((float)data[i] + K * (float)(LineCnt - 8 * i)) - floorf((float)data[i] + K * (float)(LineCnt - 8 * i)) > 0.5) {
+                    chart[HEIGHT - (int)((float)data[i] + K * (float)(LineCnt - 8 * i)) - 1][LineCnt - 8] = '*';
+                } else {
+                    chart[HEIGHT - (int)((float)data[i] + K * (float)(LineCnt - 8 * i))][LineCnt - 8] = '*';
+                }
+            }
+        }
+    }*/
+
+    for (int i = 0; i < HEIGHT; i++) {
+        fprintf(stdout, "%02d  ", HEIGHT - i);
+        for (int j = 0; j < WIDTH; j++) {
+            putchar(chart[i][j]);
+        }
+        fprintf(stdout, "\n");
+    }
+
+    fprintf(stdout, "00  ***************************\n"
+                    "   <60   60-75    75-85    >85\n");
 }

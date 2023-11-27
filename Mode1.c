@@ -9,7 +9,7 @@ int Mode1(void) {
     DIR *dir;
     struct dirent *entry;
     char fileNumber[256][256], currentDir[256];
-    char *lastSlash;
+    char *lastSlash, Temp[3];
     int fileCount = 0, userInput, StudentsNum;
     float AverageScores;
     struct student *pStudents;
@@ -45,7 +45,7 @@ int Mode1(void) {
 
     // Process the input of user.
     if (userInput >= 1 && userInput <= fileCount) {
-        printf("You choose the file: %s\n", fileNumber[userInput - 1]);
+        fprintf(stdout, "You choose the file: %s\n", fileNumber[userInput - 1]);
     } else {
         fprintf(stderr, "Invalid file.\n");
         return -1;
@@ -56,10 +56,13 @@ int Mode1(void) {
 
     AverageScores = Count(pStudents, StudentsNum);
 
+    strncpy(Temp, fileNumber[userInput - 1] +13, 2);
+    Temp[2] = '\0';
+
     fprintf(stdout, "-------------------------------------------------------------\n"
            "|                         Class：%-27d|\n"
            "-------------------------------------------------------------\n"
-           " Num |  Name  |          ID          | Trial |  Mid  | Total \n", Class(fileNumber[userInput - 1]));
+           " Num |  Name  |          ID          | Trial |  Mid  | Total \n", StrToInt(Temp));
 
     for (int i = 0; i < StudentsNum; ++i) {
         fprintf(stdout, " %-3d |  %-5s |     %s    |  %-3d  |  %-3d  |  %-3d\n", i + 1, pStudents[i].Name, pStudents[i].ID, pStudents[i].TrialScores, pStudents[i].MidScores, pStudents[i].TotalScores);

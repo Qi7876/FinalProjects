@@ -9,6 +9,7 @@
 #include "stdlib.h"
 #include "string.h"
 #include <dirent.h>
+#include "math.h"
 
 struct student {
  char Name[10];
@@ -29,6 +30,7 @@ int Mode2(void);
 int Mode3(void);
 int Sort(void);
 void AcademyList(void);
+void RenderLineChart(const int data[], int dataSize);
 
 
 

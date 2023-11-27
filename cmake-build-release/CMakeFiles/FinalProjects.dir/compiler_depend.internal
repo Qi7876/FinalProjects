@@ -90,6 +90,7 @@ CMakeFiles/FinalProjects.dir/Functions.c.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/dirent.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/dirent.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/math.h
 
 CMakeFiles/FinalProjects.dir/Mode1.c.o
  /Users/qiiwww/CLionProjects/FinalProjects/Mode1.c
@@ -180,6 +181,7 @@ CMakeFiles/FinalProjects.dir/Mode1.c.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/dirent.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/dirent.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/math.h
 
 CMakeFiles/FinalProjects.dir/Mode2.c.o
  /Users/qiiwww/CLionProjects/FinalProjects/Mode2.c
@@ -270,6 +272,7 @@ CMakeFiles/FinalProjects.dir/Mode2.c.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/dirent.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/dirent.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/math.h
 
 CMakeFiles/FinalProjects.dir/Mode3.c.o
  /Users/qiiwww/CLionProjects/FinalProjects/Mode3.c
@@ -360,6 +363,7 @@ CMakeFiles/FinalProjects.dir/Mode3.c.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/dirent.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/dirent.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/math.h
 
 CMakeFiles/FinalProjects.dir/main.c.o
  /Users/qiiwww/CLionProjects/FinalProjects/main.c
@@ -450,4 +454,5 @@ CMakeFiles/FinalProjects.dir/main.c.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/dirent.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/dirent.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/math.h
 

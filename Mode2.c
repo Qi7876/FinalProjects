@@ -21,6 +21,7 @@ int Mode2(void) {
         StudentsNum = ReadStudentInfo(FileName, &pStudents);
         AverageScores = Count(pStudents, StudentsNum);
         fprintf(stdout, " %-3d |   %-3d |      %-3d     |      %-3.1f\n", NumCount, i + 1, AcademyScores[i][0], AverageScores);
+        NumCount++;
         free(pStudents);
     }
     return 1;

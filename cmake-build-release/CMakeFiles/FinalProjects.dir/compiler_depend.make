@@ -88,7 +88,8 @@ CMakeFiles/FinalProjects.dir/Functions.c.o: /Users/qiiwww/CLionProjects/FinalPro
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/secure/_string.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/dirent.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/dirent.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/math.h
 
 CMakeFiles/FinalProjects.dir/Mode1.c.o: /Users/qiiwww/CLionProjects/FinalProjects/Mode1.c \
   /Users/qiiwww/CLionProjects/FinalProjects/ProjectIndex.h \
@@ -177,7 +178,8 @@ CMakeFiles/FinalProjects.dir/Mode1.c.o: /Users/qiiwww/CLionProjects/FinalProject
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/secure/_string.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/dirent.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/dirent.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/math.h
 
 CMakeFiles/FinalProjects.dir/Mode2.c.o: /Users/qiiwww/CLionProjects/FinalProjects/Mode2.c \
   /Users/qiiwww/CLionProjects/FinalProjects/ProjectIndex.h \
@@ -266,7 +268,8 @@ CMakeFiles/FinalProjects.dir/Mode2.c.o: /Users/qiiwww/CLionProjects/FinalProject
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/secure/_string.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/dirent.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/dirent.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/math.h
 
 CMakeFiles/FinalProjects.dir/Mode3.c.o: /Users/qiiwww/CLionProjects/FinalProjects/Mode3.c \
   /Users/qiiwww/CLionProjects/FinalProjects/ProjectIndex.h \
@@ -355,7 +358,8 @@ CMakeFiles/FinalProjects.dir/Mode3.c.o: /Users/qiiwww/CLionProjects/FinalProject
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/secure/_string.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/dirent.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/dirent.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/math.h
 
 CMakeFiles/FinalProjects.dir/main.c.o: /Users/qiiwww/CLionProjects/FinalProjects/main.c \
   /Users/qiiwww/CLionProjects/FinalProjects/ProjectIndex.h \
@@ -444,12 +448,15 @@ CMakeFiles/FinalProjects.dir/main.c.o: /Users/qiiwww/CLionProjects/FinalProjects
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/secure/_string.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/dirent.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/dirent.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_ino_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/math.h
 
 
 /Users/qiiwww/CLionProjects/FinalProjects/main.c:
 
 /Users/qiiwww/CLionProjects/FinalProjects/Mode3.c:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/math.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/secure/_strings.h:
 
