@@ -3,10 +3,40 @@
 int AcademyScores[15][5];
 
 int main() {
+    DIR *dir;
+    struct dirent *entry;
+    char currentDir[256];
+    char *lastSlash;
+
+    fprintf(stdout, "Start initializing.\n");
+    strcpy(currentDir, __FILE__);
+    lastSlash = strrchr(currentDir, '/');
+    if (lastSlash != NULL) {
+        *lastSlash = '\0';  // Cut off the string, only leave the part of directory.
+    }
+
+    // Open the current directory.
+    dir = opendir(currentDir);
+
+    if (dir == NULL) {
+        fprintf(stderr, "Fail to open the curent directort.\n");
+        return -1;
+    }
+
+    while ((entry = readdir(dir)) != NULL) {
+        // check whether the file is a txt or not.
+        if (strstr(entry->d_name, "All") != NULL || strstr(entry->d_name, "20230109") != NULL) {
+            remove(entry->d_name);
+        }
+    }
+
     Sort();
     AcademyList();
     int UserChoose;
-    printf("-----------------------------------------------------\n"
+
+    AGAIN:
+    fprintf(stdout, "\n"
+                    "-----------------------------------------------------\n"
            "|         Students' Scores Statistic System         |\n"
            "-----------------------------------------------------\n"
            "Please choose the work mode:\n"
@@ -21,13 +51,13 @@ int main() {
     switch (UserChoose) {
         case 1:
             Mode1();
-            break;
+            goto AGAIN;
         case 2:
             Mode2();
-            break;
+            goto AGAIN;
         case 3:
             Mode3();
-            break;
+            goto AGAIN;
         case 4:
             printf("Exiting...\n");
             return 0;
@@ -35,5 +65,4 @@ int main() {
             printf("Invalid choice, please choose again.\n");
             goto INPUT;
     }
-    return 0;
 }
