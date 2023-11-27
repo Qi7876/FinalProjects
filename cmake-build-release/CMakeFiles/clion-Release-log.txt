@@ -1,0 +1,4 @@
+/Users/qiiwww/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Release -S /Users/qiiwww/CLionProjects/FinalProjects -B /Users/qiiwww/CLionProjects/FinalProjects/cmake-build-release
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/qiiwww/CLionProjects/FinalProjects/cmake-build-release

@@ -18,6 +18,8 @@ struct student {
  int TotalScores;
 };
 
+extern int AcademyScores[15][5];
+
 int StrToInt(const char *string);
 int ReadStudentInfo(const char *filename, struct student **pStudents);
 float Count(struct student pStu[], int num);
@@ -25,6 +27,9 @@ int Class(char *ID);
 int Mode1(void);
 int Mode2(void);
 int Mode3(void);
+int Sort(void);
+void AcademyList(void);
+
 
 
 #endif //FINALPROJECTS_PROJECTINDEX_H

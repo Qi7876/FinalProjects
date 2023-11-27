@@ -1,6 +1,10 @@
 #include "ProjectIndex.h"
 
+int AcademyScores[15][5];
+
 int main() {
+    Sort();
+    AcademyList();
     int UserChoose;
     printf("-----------------------------------------------------\n"
            "|         Students' Scores Statistic System         |\n"

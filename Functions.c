@@ -5,6 +5,10 @@
 
 #include "ProjectIndex.h"
 
+int CompareByID(const void *a, const void *b) {
+    return strcmp(((struct student*)a)->ID, ((struct student*)b)->ID);
+}
+
 int StrToInt(const char *string) {
     int ResultInt = 0;
     for (int i = 0; '0'<= string[i] && string[i] <= '9'; ++i) {
@@ -73,6 +77,94 @@ int Class(char *ID) {
     return Class;
 }
 
-void Sort() {
+int Sort(void) {
+    DIR *dir;
+    struct dirent *entry;
+    char fileNumber[256][256], currentDir[256];
+    char *lastSlash, Temp[20];
+    int fileCount = 0, StudentsNum;
+    struct student *pStudents;
+    FILE *TempAll, *AdminClassFiles, *All;
 
+    fprintf(stdout, "Start sorting.\n");
+
+    strcpy(currentDir, __FILE__);
+    lastSlash = strrchr(currentDir, '/');
+    if (lastSlash != NULL) {
+        *lastSlash = '\0';  // Cut off the string, only leave the part of directory.
+    }
+
+    // Open the current directory.
+    dir = opendir(currentDir);
+
+    if (dir == NULL) {
+        fprintf(stderr, "Fail to open the curent directort.\n");
+        return -1;
+    }
+
+    // Directory travelsal
+    while ((entry = readdir(dir)) != NULL) {
+        // check whether the file is a txt or not.
+        if (strstr(entry->d_name, ".txt") != NULL && strstr(entry->d_name, "CMake") == NULL) {
+            printf("%d: %s\n", fileCount + 1, entry->d_name);
+            strcpy(fileNumber[fileCount], entry->d_name);
+            fileCount++;
+        }
+    }
+
+    closedir(dir);
+    printf("Start processing.\n");
+    TempAll = fopen("TempAll.txt", "w");
+    for (int i = 0; i < fileCount; ++i) {
+        StudentsNum = ReadStudentInfo(fileNumber[i], &pStudents);
+        Count(pStudents, StudentsNum);
+        for (int j = 0; j < StudentsNum; ++j) {
+            fprintf(TempAll, "%s %s %d %d %d\n", pStudents[j].Name, pStudents[j].ID, pStudents[j].TrialScores, pStudents[j].MidScores, pStudents[j].TotalScores);
+        }
+        free(pStudents);
+    }
+    fclose(TempAll);
+
+    StudentsNum = ReadStudentInfo("TempAll.txt", &pStudents);
+    Count(pStudents, StudentsNum);
+    All = fopen("All.txt", "w");
+    qsort(pStudents, StudentsNum, sizeof (struct student), CompareByID);
+    for (int j = 0; j < StudentsNum; ++j) {
+        fprintf(All, "%s %s %d %d %d\n", pStudents[j].Name, pStudents[j].ID, pStudents[j].TrialScores, pStudents[j].MidScores, pStudents[j].TotalScores);
+        strncpy(Temp, pStudents[j].ID, 10);
+        Temp[10] = '\0';
+        strcpy(Temp + 10, ".txt\0");
+        AdminClassFiles = fopen(Temp, "a");
+        fprintf(AdminClassFiles, "%s %s %d %d %d\n", pStudents[j].Name, pStudents[j].ID, pStudents[j].TrialScores, pStudents[j].MidScores, pStudents[j].TotalScores);
+        fclose(AdminClassFiles);
+        }
+    free(pStudents);
+    fclose(TempAll);
+    fclose(All);
+    remove("TempAll.txt");
+    return 1;
+}
+
+void AcademyList(void) {
+    struct student *pStudents;
+    int StudentsNum, ClassIndex, Total;
+    StudentsNum = ReadStudentInfo("All.txt", &pStudents);
+    Count(pStudents, StudentsNum);
+    for (int i = 0; i < StudentsNum; ++i) {
+        ClassIndex = Class(pStudents[i].ID);
+        AcademyScores[ClassIndex - 1][0]++;
+        Total = pStudents[i].TotalScores;
+        if (Total < 60) {
+            AcademyScores[ClassIndex - 1][1]++;
+        }
+        else if (Total < 75) {
+            AcademyScores[ClassIndex - 1][2]++;
+        }
+        else if (Total < 85) {
+            AcademyScores[ClassIndex - 1][3]++;
+        } else {
+            AcademyScores[ClassIndex - 1][4]++;
+        }
+    }
+    free(pStudents);
 }
