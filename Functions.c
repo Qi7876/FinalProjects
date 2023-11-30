@@ -106,7 +106,7 @@ int Sort(void) {
     // Directory travelsal
     while ((entry = readdir(dir)) != NULL) {
         // check whether the file is a txt or not.
-        if (strstr(entry->d_name, ".txt") != NULL && strstr(entry->d_name, "CMake") == NULL) {
+        if (strstr(entry->d_name, "TeachingClass") != NULL) {
             printf("%d: %s\n", fileCount + 1, entry->d_name);
             strcpy(fileNumber[fileCount], entry->d_name);
             fileCount++;
