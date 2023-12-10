@@ -173,8 +173,6 @@ void AcademyList(void) {
 #define HEIGHT 6
 
 void RenderLineChart(const int *data, int dataSize) {
-    int LineCnt = 0;
-    float K;
     char chart[HEIGHT][WIDTH];
 
     for (int i = 0; i < HEIGHT; i++) {
@@ -190,21 +188,6 @@ void RenderLineChart(const int *data, int dataSize) {
             chart[j][x] = '#';
         }
     }
-
-    /*for (int i = 0; i < dataSize - 1; ++i) {
-        K = -((float) data[i] - (float) data[i + 1]) / 8;
-        for (;LineCnt < 8 * (i + 1); LineCnt++) {
-            if (LineCnt % 8 == 0) {
-                continue;
-            } else {
-                if (((float)data[i] + K * (float)(LineCnt - 8 * i)) - floorf((float)data[i] + K * (float)(LineCnt - 8 * i)) > 0.5) {
-                    chart[HEIGHT - (int)((float)data[i] + K * (float)(LineCnt - 8 * i)) - 1][LineCnt - 8] = '*';
-                } else {
-                    chart[HEIGHT - (int)((float)data[i] + K * (float)(LineCnt - 8 * i))][LineCnt - 8] = '*';
-                }
-            }
-        }
-    }*/
 
     fprintf(stdout, "Nums.\n");
     for (int i = 0; i < HEIGHT; i++) {

@@ -1,0 +1,7 @@
+# ninja log v5
+4	55	7238976934667112	CMakeFiles/FinalProjects.dir/Mode3.c.obj	39f04d143be68e40
+2	56	7238976934667112	CMakeFiles/FinalProjects.dir/main.c.obj	94a55e6e8d4d2f18
+0	56	7238976934667112	CMakeFiles/FinalProjects.dir/Mode1.c.obj	3c2fcdba277e61ec
+8	56	7238976934687117	CMakeFiles/FinalProjects.dir/Mode2.c.obj	92495b7ac3ce31a9
+6	65	7238976934787128	CMakeFiles/FinalProjects.dir/Functions.c.obj	d73c93a69d32f6e1
+65	116	7238976935277356	FinalProjects.exe	a432c496c241642a

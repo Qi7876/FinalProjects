@@ -19,7 +19,7 @@ int main() {
     dir = opendir(currentDir);
 
     if (dir == NULL) {
-        fprintf(stderr, "Fail to open the curent directort.\n");
+        fprintf(stderr, "Fail to open the current directory.\n");
         return -1;
     }
 
